@@ -27,7 +27,9 @@ Open http://localhost:5174
 
 https://junnotjune.github.io/ewp-prototype/
 
-(Push to that repo to update the published copy.)
+(Push to that repo to update the published copy. Bump the `?v=` on the `styles.css`
+and `app.js` tags in `index.html` when you do — Pages caches both for 10 minutes,
+so without it a reload can pair new markup with the old stylesheet.)
 
 ## Source
 

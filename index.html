@@ -10,7 +10,9 @@
       href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,200;8..60,300;8..60,400&family=Zilla+Slab:wght@700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <!-- Bump ?v= on every deploy: Pages caches these for 10 minutes, so without
+         it a plain reload can show old CSS against new markup. -->
+    <link rel="stylesheet" href="styles.css?v=4" />
   </head>
   <body data-release="r1">
     <div class="switcher" role="region" aria-label="Prototype switcher">
@@ -141,6 +143,13 @@
                 </button>
               </div>
             </div>
+
+            <p class="d-dek">
+              To guide you in making smarter substitutions and cooking more intuitively, we made our
+              own mock CSA box in the kitchen studio, filling it with springtime produce that has
+              stumped readers in the past. Produce like Swiss chard. Everyone is simply drowning in
+              chard.
+            </p>
 
             <hr class="d-rule future-only" />
 
@@ -344,6 +353,12 @@
             <div class="m-meta">
               <p class="m-kicker">The Veggie</p>
               <h1 class="m-title">Help, My C.S.A. Sent Me A Boatload of Chard</h1>
+              <p class="m-dek">
+                To guide you in making smarter substitutions and cooking more intuitively, we made
+                our own mock CSA box in the kitchen studio, filling it with springtime produce that
+                has stumped readers in the past. Produce like Swiss chard. Everyone is simply
+                drowning in chard.
+              </p>
               <div class="action-bar future-only">
                 <button class="btn-important btn-save" type="button">
                   <img src="assets/save-btn.svg" alt="" width="20" height="20" />
@@ -532,7 +547,7 @@
       </div>
     </section>
 
-    <script src="app.js"></script>
+    <script src="app.js?v=4"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
   </body>
 </html>

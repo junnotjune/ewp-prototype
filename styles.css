@@ -467,6 +467,7 @@ body[data-release="r1"] .future-only {
 }
 
 .d-top {
+  position: relative;
   display: flex;
   gap: 40px;
   align-items: flex-start;
@@ -551,8 +552,14 @@ body[data-release="r1"] .d-player {
   height: 100%;
 }
 
+/* The rail runs longer than the player and is meant to overhang its bottom
+   edge, so it sits outside the flow — otherwise it sets the height of the row
+   and pushes the headline down by however much taller it happens to be. */
 .d-rail {
-  flex: 0 0 260px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 260px;
   display: flex;
   flex-direction: column;
 }
@@ -597,11 +604,20 @@ body[data-release="r1"] .d-player {
   align-items: flex-start;
   gap: 0;
   margin-top: 12px;
-  margin-bottom: 120px;
 }
 
-body[data-release="future"] .d-meta {
-  margin-bottom: 0;
+.d-dek {
+  margin: 16px 0 0;
+  font-family: var(--font-serif);
+  font-size: 17px;
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+  color: #222;
+}
+
+/* Nothing follows the dek in Release 1, so it carries the gap to the footer. */
+body[data-release="r1"] .d-dek {
+  margin-bottom: 64px;
 }
 
 .d-meta-text {
@@ -636,7 +652,7 @@ body[data-release="r1"] .d-meta-text {
 }
 
 .d-rule {
-  margin: 58px 0 0;
+  margin: 40px 0 0;
   border: 0;
   border-top: 2px solid var(--stroke-thick);
 }
@@ -947,8 +963,17 @@ body[data-release="r1"] .d-meta-text {
   margin-top: 10px;
 }
 
+.m-dek {
+  margin: 8px 0 0;
+  font-family: var(--font-serif);
+  font-size: 16px;
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+  color: #222;
+}
+
 body[data-release="r1"] .m-meta {
-  padding-bottom: 48px;
+  padding-bottom: 40px;
 }
 
 .m-recipes {
