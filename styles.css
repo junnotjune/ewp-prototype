@@ -66,31 +66,81 @@ ul {
 .switcher-inner {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 14px 20px;
   display: flex;
-  align-items: center;
-  gap: 16px;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
-.switcher-title {
-  margin: 0;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+.switcher-releases {
+  display: flex;
+  gap: 8px;
+  flex: 1 1 520px;
+  min-width: 0;
 }
 
-.switcher-tabs {
+.switcher-releases button {
+  flex: 1 1 220px;
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.78);
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.switcher-releases button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.switcher-releases button[aria-selected="true"] {
+  background: #fff;
+  border-color: #fff;
+  color: #222;
+}
+
+.switcher-releases button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.release-name {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+.release-desc {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  opacity: 0.72;
+}
+
+.switcher-releases button[aria-selected="true"] .release-desc {
+  opacity: 0.7;
+  color: #444;
+}
+
+.switcher-viewports {
   display: inline-flex;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 999px;
   padding: 3px;
   gap: 2px;
+  flex: 0 0 auto;
 }
 
-.switcher-tabs button {
+.switcher-viewports button {
   border: 0;
   background: transparent;
   color: rgba(255, 255, 255, 0.75);
@@ -102,24 +152,23 @@ ul {
   cursor: pointer;
 }
 
-.switcher-tabs button:hover {
+.switcher-viewports button:hover {
   color: #fff;
 }
 
-.switcher-tabs button[aria-selected="true"] {
+.switcher-viewports button[aria-selected="true"] {
   background: #fff;
   color: #222;
 }
 
-.switcher-tabs button:focus-visible {
+.switcher-viewports button:focus-visible {
   outline: 2px solid #fff;
   outline-offset: 2px;
 }
 
-.switcher-hint {
-  margin: 0 0 0 auto;
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.6);
+/* Release 1 hides post-launch surfaces */
+body[data-release="r1"] .future-only {
+  display: none !important;
 }
 
 .view[hidden] {
@@ -542,6 +591,11 @@ ul {
   align-items: flex-start;
   gap: 0;
   margin-top: 12px;
+  margin-bottom: 40px;
+}
+
+body[data-release="future"] .d-meta {
+  margin-bottom: 0;
 }
 
 .d-meta-text {

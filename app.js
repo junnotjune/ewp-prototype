@@ -1,15 +1,24 @@
-const HINTS = {
-  desktop: '1280px — "4 recipes"',
-  mobile: '375px — "<764px"',
-};
+const releaseTabs = Array.from(document.querySelectorAll(".switcher-releases button"));
+const viewportTabs = Array.from(document.querySelectorAll(".switcher-viewports button"));
 
-const tabs = Array.from(document.querySelectorAll(".switcher-tabs button"));
-const hint = document.getElementById("switcher-hint");
+function showRelease(release) {
+  if (!["r1", "future"].includes(release)) return;
 
-function show(view) {
-  if (!HINTS[view]) return;
+  document.body.dataset.release = release;
 
-  tabs.forEach((tab) => {
+  releaseTabs.forEach((tab) => {
+    tab.setAttribute("aria-selected", String(tab.dataset.release === release));
+  });
+
+  const url = new URL(window.location.href);
+  url.searchParams.set("r", release);
+  history.replaceState(null, "", url);
+}
+
+function showViewport(view) {
+  if (!["desktop", "mobile"].includes(view)) return;
+
+  viewportTabs.forEach((tab) => {
     const isActive = tab.dataset.view === view;
     tab.setAttribute("aria-selected", String(isActive));
 
@@ -18,8 +27,6 @@ function show(view) {
     panel.classList.toggle("is-active", isActive);
   });
 
-  hint.textContent = HINTS[view];
-
   const url = new URL(window.location.href);
   url.searchParams.set("v", view);
   history.replaceState(null, "", url);
@@ -27,18 +34,28 @@ function show(view) {
   window.scrollTo({ top: 0 });
 }
 
-tabs.forEach((tab) => tab.addEventListener("click", () => show(tab.dataset.view)));
+releaseTabs.forEach((tab) =>
+  tab.addEventListener("click", () => showRelease(tab.dataset.release))
+);
+
+viewportTabs.forEach((tab) =>
+  tab.addEventListener("click", () => showViewport(tab.dataset.view))
+);
 
 document.addEventListener("keydown", (event) => {
   if (event.metaKey || event.ctrlKey || event.altKey) return;
   if (event.target.matches("input, textarea")) return;
 
   const key = event.key.toLowerCase();
-  if (key === "d") show("desktop");
-  if (key === "m") show("mobile");
+  if (key === "1") showRelease("r1");
+  if (key === "2") showRelease("future");
+  if (key === "d") showViewport("desktop");
+  if (key === "m") showViewport("mobile");
 });
 
-show(new URL(window.location.href).searchParams.get("v") || "desktop");
+const params = new URL(window.location.href).searchParams;
+showRelease(params.get("r") || "r1");
+showViewport(params.get("v") || "desktop");
 
 /* ─────────── Players ───────────
    The Figma frame puts fullscreen / mute / captions in an overlay stack, so

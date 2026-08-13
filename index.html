@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Episode Watch Page — Desktop &amp; Mobile</title>
+    <title>Episode Watch Page — Release 1 &amp; Future Release</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,11 +12,20 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <div class="switcher" role="region" aria-label="Viewport switcher">
+  <body data-release="r1">
+    <div class="switcher" role="region" aria-label="Prototype switcher">
       <div class="switcher-inner">
-        <p class="switcher-title">Episode Watch Page</p>
-        <div class="switcher-tabs" role="tablist" aria-label="Choose viewport">
+        <div class="switcher-releases" role="tablist" aria-label="Choose release">
+          <button type="button" role="tab" id="tab-r1" data-release="r1" aria-selected="true" aria-controls="view-desktop view-mobile">
+            <span class="release-name">Release 1</span>
+            <span class="release-desc">Watch page with episode recipes only. No save, share, or related content.</span>
+          </button>
+          <button type="button" role="tab" id="tab-future" data-release="future" aria-selected="false" aria-controls="view-desktop view-mobile">
+            <span class="release-name">Future Release</span>
+            <span class="release-desc">Full experience — related episodes, articles, save, and share.</span>
+          </button>
+        </div>
+        <div class="switcher-viewports" role="tablist" aria-label="Choose viewport">
           <button type="button" role="tab" id="tab-desktop" data-view="desktop" aria-selected="true" aria-controls="view-desktop">
             Desktop
           </button>
@@ -24,7 +33,6 @@
             Mobile
           </button>
         </div>
-        <p class="switcher-hint" id="switcher-hint">1280px — “4 recipes”</p>
       </div>
     </div>
 
@@ -114,7 +122,7 @@
                     <p>Provencal Greens Soup</p>
                   </li>
                 </ul>
-                <a class="d-rail-all" href="#">See all recipes from The Veggie</a>
+                <a class="d-rail-all future-only" href="#">See all recipes from The Veggie</a>
               </aside>
             </div>
 
@@ -123,7 +131,7 @@
                 <p class="d-kicker">The Veggie</p>
                 <h1 class="d-title">Help, My C.S.A. Sent Me A Boatload of Chard</h1>
               </div>
-              <div class="action-bar">
+              <div class="action-bar future-only">
                 <button class="btn-important btn-save" type="button">
                   <img src="assets/save-btn.svg" alt="" width="20" height="20" />
                   Save
@@ -134,9 +142,9 @@
               </div>
             </div>
 
-            <hr class="d-rule" />
+            <hr class="d-rule future-only" />
 
-            <section class="d-carousel" aria-labelledby="d-episodes-title">
+            <section class="d-carousel future-only" aria-labelledby="d-episodes-title">
               <h2 class="section-title" id="d-episodes-title">More Episodes of <a href="#">The Veggie</a></h2>
               <div class="d-card-row">
                 <article class="d-card">
@@ -169,7 +177,7 @@
               </div>
             </section>
 
-            <section class="d-carousel" aria-labelledby="d-articles-title">
+            <section class="d-carousel future-only" aria-labelledby="d-articles-title">
               <h2 class="section-title" id="d-articles-title">Related Articles</h2>
               <div class="d-card-row">
                 <article class="d-card">
@@ -336,7 +344,7 @@
             <div class="m-meta">
               <p class="m-kicker">The Veggie</p>
               <h1 class="m-title">Help, My C.S.A. Sent Me A Boatload of Chard</h1>
-              <div class="action-bar">
+              <div class="action-bar future-only">
                 <button class="btn-important btn-save" type="button">
                   <img src="assets/save-btn.svg" alt="" width="20" height="20" />
                   Save
@@ -384,7 +392,7 @@
               </ul>
             </section>
 
-            <section class="m-episodes" aria-labelledby="m-episodes-title">
+            <section class="m-episodes future-only" aria-labelledby="m-episodes-title">
               <hr class="m-rule" />
               <h2 class="section-title" id="m-episodes-title">More Episodes of The Veggie</h2>
               <ul class="m-video-list">
@@ -430,7 +438,7 @@
               </ul>
             </section>
 
-            <section class="m-articles" aria-labelledby="m-articles-title">
+            <section class="m-articles future-only" aria-labelledby="m-articles-title">
               <h2 class="section-title" id="m-articles-title">Related Articles</h2>
               <div class="m-card-row">
                 <article class="m-card">

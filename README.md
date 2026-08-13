@@ -1,11 +1,11 @@
-# EWP prototype — desktop vs. mobile
+# EWP prototype — Release 1 vs. Future Release
 
-The Episode Watch Page for The Veggie at two breakpoints, in separate tabs.
+Toggle between the pared-down first launch and the fuller future experience. Each has Desktop and Mobile.
 
-| Tab | Breakpoint | Figma frame |
-|---|---|---|
-| **Desktop** | 1280px | [`12182:13697`](https://www.figma.com/design/moqoPImGMRnwhRZ12JVbJF/-2026--Video-Series?node-id=12182-13697) — "4 recipes" |
-| **Mobile** | 375px | [`12182:16614`](https://www.figma.com/design/moqoPImGMRnwhRZ12JVbJF/-2026--Video-Series?node-id=12182-16614) — "<764px" |
+| Prototype | What's in it |
+|---|---|
+| **Release 1** | Watch page + episode recipes. No save, share, or related carousels. |
+| **Future Release** | Full page — related episodes, articles, save, and share. |
 
 ## Run
 
@@ -18,15 +18,25 @@ Open http://localhost:5174
 
 ## Switch views
 
-- Click **Desktop** / **Mobile** in the sticky bar
-- Or press `D` / `M`
-- Deep link: `?v=desktop` or `?v=mobile`
+- Click **Release 1** / **Future Release** in the sticky bar
+- Click **Desktop** / **Mobile** for viewport
+- Keys: `1` / `2` for release, `D` / `M` for viewport
+- Deep link: `?r=r1&v=desktop` or `?r=future&v=mobile`
 
-Desktop renders at a fixed 1280px and scrolls horizontally in a narrow window. Mobile renders at 375px in a device frame.
+## Shareable link
+
+https://junnotjune.github.io/ewp-prototype/
+
+(Push to that repo to update the published copy.)
+
+## Source
+
+- Desktop: Figma [`12182:13697`](https://www.figma.com/design/moqoPImGMRnwhRZ12JVbJF/-2026--Video-Series?node-id=12182-13697) — "4 recipes"
+- Mobile: Figma [`12182:16614`](https://www.figma.com/design/moqoPImGMRnwhRZ12JVbJF/-2026--Video-Series?node-id=12182-16614) — "<764px"
+- Release 1 scope: `product/first-launch-scope-alignment.md`
 
 ## Notes
 
-- Images and icons in `assets/` are exported straight from the Figma frames.
-- NYT typefaces aren't licensed for this prototype. Stand-ins: Source Serif 4 for Cheltenham, Source Sans 3 for Franklin, Zilla Slab for Karnak. Type sizes, weights, and spacing match the design.
-- The player is a real YouTube embed of ["How to Use Your Spring CSA Veggies"](https://www.youtube.com/watch?v=NzDK4S4PCCk), so it needs a network connection. It uses YouTube's own controls rather than the mocked fullscreen/mute/CC buttons in the Figma frame.
-- Everything else is a static comp — the carousels and buttons don't do anything.
+- Images and icons in `assets/` are exported from the Figma frames.
+- NYT typefaces aren't licensed for this prototype. Stand-ins: Source Serif 4 for Cheltenham, Source Sans 3 for Franklin, Zilla Slab for Karnak.
+- The player is a real YouTube embed of ["How to Use Your Spring CSA Veggies"](https://www.youtube.com/watch?v=NzDK4S4PCCk). Needs a network connection. Design controls (fullscreen / mute / CC) drive the player via the YouTube IFrame API.
