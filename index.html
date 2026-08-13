@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Episode Watch Page — Desktop &amp; Mobile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,200;8..60,300;8..60,400&family=Zilla+Slab:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="switcher" role="region" aria-label="Viewport switcher">
+      <div class="switcher-inner">
+        <p class="switcher-title">Episode Watch Page</p>
+        <div class="switcher-tabs" role="tablist" aria-label="Choose viewport">
+          <button type="button" role="tab" id="tab-desktop" data-view="desktop" aria-selected="true" aria-controls="view-desktop">
+            Desktop
+          </button>
+          <button type="button" role="tab" id="tab-mobile" data-view="mobile" aria-selected="false" aria-controls="view-mobile">
+            Mobile
+          </button>
+        </div>
+        <p class="switcher-hint" id="switcher-hint">1280px — “4 recipes”</p>
+      </div>
+    </div>
+
+    <!-- ═══════════════════ DESKTOP ═══════════════════ -->
+    <section class="view is-active" id="view-desktop" role="tabpanel" aria-labelledby="tab-desktop">
+      <div class="view-scroll">
+        <div class="d-page">
+          <header class="d-nav">
+            <div class="d-nav-inner">
+              <div class="d-nav-top">
+                <img class="d-logo" src="assets/logo.svg" alt="NYT Cooking" width="164" height="29" />
+                <div class="d-search" role="search">
+                  <img src="assets/search.svg" alt="" width="24" height="24" />
+                  <span>What would you like to cook?</span>
+                </div>
+                <div class="d-nav-actions">
+                  <button class="btn-important" type="button">Get the app</button>
+                  <a class="d-recipe-box" href="#">
+                    <img src="assets/save-outline.svg" alt="" width="20" height="20" />
+                    Your Recipe Box
+                  </a>
+                  <button class="icon-plain" type="button" aria-label="Your account">
+                    <img src="assets/profile.svg" alt="" width="24" height="24" />
+                  </button>
+                </div>
+              </div>
+              <nav class="d-nav-items" aria-label="Sections">
+                <a href="#">What to Cook</a>
+                <a href="#">Recipes</a>
+                <a href="#">Ingredients</a>
+                <a href="#">Occasions</a>
+                <a href="#">Articles</a>
+                <a href="#">About</a>
+              </nav>
+            </div>
+          </header>
+
+          <main class="d-main">
+            <div class="d-top">
+              <div class="d-player">
+                <div id="d-player-embed"></div>
+                <div class="player-controls">
+                  <button type="button" class="player-btn" data-action="fullscreen" aria-label="Full screen">
+                    <img src="assets/fullscreen.svg" alt="" width="24" height="24" />
+                  </button>
+                  <button type="button" class="player-btn" data-action="mute" aria-label="Mute" aria-pressed="false">
+                    <img src="assets/muted.svg" alt="" width="19" height="16" />
+                  </button>
+                  <button type="button" class="player-btn" data-action="cc" aria-label="Closed captions" aria-pressed="false">
+                    <span class="cc-glyph">
+                      <img src="assets/cc-rect.svg" alt="" />
+                      <img src="assets/cc-text.svg" alt="" />
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+              <aside class="d-rail" aria-labelledby="d-rail-title">
+                <h2 class="section-title" id="d-rail-title">Recipes in the Episode</h2>
+                <ul class="d-rail-list">
+                  <li>
+                    <span class="thumb-96">
+                      <img src="assets/recipe-1.png" alt="" />
+                      <img class="play-badge" src="assets/play-badge.svg" alt="" width="24" height="24" />
+                    </span>
+                    <p>Creamy Swiss Chard Pasta With Leeks, Tarragon and Lemon Zest</p>
+                  </li>
+                  <li>
+                    <span class="thumb-96">
+                      <img src="assets/recipe-2.png" alt="" />
+                      <img class="play-badge" src="assets/play-badge.svg" alt="" width="24" height="24" />
+                    </span>
+                    <p>Turnips With Whipped Pistachio Feta</p>
+                  </li>
+                  <li>
+                    <span class="thumb-96">
+                      <img src="assets/recipe-3.png" alt="" />
+                      <img class="play-badge" src="assets/play-badge.svg" alt="" width="24" height="24" />
+                    </span>
+                    <p>Creamy Swiss Chard Pasta With Leeks, Tarragon and Lemon Zest</p>
+                  </li>
+                  <li>
+                    <span class="thumb-96">
+                      <img src="assets/recipe-4.png" alt="" />
+                      <img class="play-badge" src="assets/play-badge.svg" alt="" width="24" height="24" />
+                    </span>
+                    <p>Provencal Greens Soup</p>
+                  </li>
+                </ul>
+                <a class="d-rail-all" href="#">See all recipes from The Veggie</a>
+              </aside>
+            </div>
+
+            <div class="d-meta">
+              <div class="d-meta-text">
+                <p class="d-kicker">The Veggie</p>
+                <h1 class="d-title">Help, My C.S.A. Sent Me A Boatload of Chard</h1>
+              </div>
+              <div class="action-bar">
+                <button class="btn-important btn-save" type="button">
+                  <img src="assets/save-btn.svg" alt="" width="20" height="20" />
+                  Save
+                </button>
+                <button class="icon-btn" type="button" aria-label="Share">
+                  <img src="assets/share.svg" alt="" width="20" height="20" />
+                </button>
+              </div>
+            </div>
+
+            <hr class="d-rule" />
+
+            <section class="d-carousel" aria-labelledby="d-episodes-title">
+              <h2 class="section-title" id="d-episodes-title">More Episodes of <a href="#">The Veggie</a></h2>
+              <div class="d-card-row">
+                <article class="d-card">
+                  <img class="d-card-img" src="assets/d-episode-1.png" alt="" />
+                  <h3>Our Ultimate Guide to Making Bagels</h3>
+                  <p class="byline">By Claire Saffitz</p>
+                  <p class="label-xs">2 days ago</p>
+                </article>
+                <article class="d-card">
+                  <img class="d-card-img" src="assets/d-episode-2.png" alt="" />
+                  <h3>Our Ultimate Guide to Making Bagels</h3>
+                  <p class="byline">By Claire Saffitz</p>
+                  <p class="label-xs">3 days ago</p>
+                </article>
+                <article class="d-card">
+                  <img class="d-card-img" src="assets/d-episode-3.png" alt="" />
+                  <h3>Our Ultimate Guide to Making Bagels</h3>
+                  <p class="byline">By Claire Saffitz</p>
+                  <p class="label-xs">9 days ago</p>
+                </article>
+                <article class="d-card">
+                  <img class="d-card-img" src="assets/d-episode-4.png" alt="" />
+                  <h3>Our Ultimate Guide to Making Bagels</h3>
+                  <p class="byline">By Claire Saffitz</p>
+                  <p class="label-xs">2 weeks ago</p>
+                </article>
+                <button class="carousel-arrow" type="button" aria-label="Next episodes">
+                  <img src="assets/chevron.svg" alt="" width="14" height="8" />
+                </button>
+              </div>
+            </section>
+
+            <section class="d-carousel" aria-labelledby="d-articles-title">
+              <h2 class="section-title" id="d-articles-title">Related Articles</h2>
+              <div class="d-card-row">
+                <article class="d-card">
+                  <img class="d-card-img" src="assets/d-article-1.png" alt="" />
+                  <h3>Our Ultimate Guide to Making Bagels</h3>
+                  <p class="byline">By Claire Saffitz</p>
+                  <p class="label-xs">Article</p>
+                </article>
+                <article class="d-card">
+                  <img class="d-card-img" src="assets/d-article-2.png" alt="" />
+                  <h3>Our Ultimate Guide to Making Bagels</h3>
+                  <p class="byline">By Claire Saffitz</p>
+                  <p class="label-xs">Article</p>
+                </article>
+                <article class="d-card">
+                  <img class="d-card-img" src="assets/d-article-3.png" alt="" />
+                  <h3>Our Ultimate Guide to Making Bagels</h3>
+                  <p class="byline">By Claire Saffitz</p>
+                  <p class="label-xs">Article</p>
+                </article>
+                <article class="d-card">
+                  <img class="d-card-img" src="assets/d-article-4.png" alt="" />
+                  <h3>Our Ultimate Guide to Making Bagels</h3>
+                  <p class="byline">By Claire Saffitz</p>
+                  <p class="label-xs">Article</p>
+                </article>
+                <button class="carousel-arrow" type="button" aria-label="Next articles">
+                  <img src="assets/chevron.svg" alt="" width="14" height="8" />
+                </button>
+              </div>
+            </section>
+          </main>
+
+          <footer class="d-footer">
+            <section class="d-newsletter">
+              <div class="d-newsletter-inner">
+                <div class="d-newsletter-copy">
+                  <h2>Get Our Newsletter</h2>
+                  <p class="lede">Get recipes, tips and NYT special offers delivered straight to your inbox.</p>
+                  <p class="fine">Opt out or contact us anytime. See our Privacy Policy.</p>
+                  <form class="d-signup" onsubmit="return false">
+                    <input type="email" placeholder="Enter your email" aria-label="Email address" />
+                    <button class="btn-important" type="submit">Sign up</button>
+                  </form>
+                </div>
+                <div class="d-newsletter-aside">
+                  <div>
+                    <h3>Follow Us</h3>
+                    <div class="social-row">
+                      <a class="social-pill" href="#" aria-label="Instagram"><img src="assets/social-ig.svg" alt="" /></a>
+                      <a class="social-pill" href="#" aria-label="Facebook"><img src="assets/social-fb.svg" alt="" /></a>
+                      <a class="social-pill" href="#" aria-label="YouTube"><img src="assets/social-yt.svg" alt="" /></a>
+                      <a class="social-pill" href="#" aria-label="TikTok"><img src="assets/social-tt.svg" alt="" /></a>
+                      <a class="social-pill" href="#" aria-label="Pinterest"><img src="assets/social-pin.svg" alt="" /></a>
+                    </div>
+                  </div>
+                  <div>
+                    <h3>Get the App</h3>
+                    <div class="badge-row">
+                      <a href="#"><img src="assets/badge-appstore.svg" alt="Download on the App Store" width="120" height="40" /></a>
+                      <a href="#"><img src="assets/badge-googleplay.svg" alt="Get it on Google Play" width="135" height="40" /></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="d-sitemap">
+              <div class="d-sitemap-row">
+                <div class="d-about">
+                  <h3>About Us</h3>
+                  <p>
+                    New York Times Cooking offers subscribers recipes, advice and inspiration for better everyday
+                    cooking. From easy weeknight dinners to holiday meals, our recipes have been tested and perfected to
+                    meet the needs of home cooks of all levels. <a href="#">Subscribe now</a> for full access.
+                  </p>
+                </div>
+                <div class="d-links">
+                  <div>
+                    <ul class="link-group">
+                      <li class="group-title">Learn More</li>
+                      <li><a href="#">About Us</a></li>
+                      <li><a href="#">FAQ</a></li>
+                      <li><a href="#">NYTimes.com/food</a></li>
+                    </ul>
+                    <ul class="link-group link-group--shop">
+                      <li class="group-title">Shop</li>
+                      <li><a href="#">Gift Subscription</a></li>
+                      <li><a href="#">Merchandise</a></li>
+                    </ul>
+                    <hr class="link-rule" />
+                    <p class="link-single"><a href="#">Send Us Feedback</a></p>
+                  </div>
+                  <ul class="link-group">
+                    <li class="group-title">Recipes</li>
+                    <li><a href="#">From Our Newsletters</a></li>
+                    <li><a href="#">Weeknight</a></li>
+                    <li><a href="#">Pasta</a></li>
+                    <li><a href="#">Dinner</a></li>
+                    <li><a href="#">Healthy</a></li>
+                    <li><a href="#">Vegetarian</a></li>
+                    <li><a href="#">Vegan</a></li>
+                    <li><a href="#">Thanksgiving</a></li>
+                    <li><a href="#">Christmas</a></li>
+                  </ul>
+                </div>
+              </div>
+              <p class="d-legal">
+                <span>© The New York Times Company</span>
+                <span class="legal-sep" aria-hidden="true"></span>
+                <a href="#">Terms of Service</a>
+                <span class="legal-sep" aria-hidden="true"></span>
+                <a href="#">Privacy Policy</a>
+              </p>
+            </section>
+          </footer>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ MOBILE ═══════════════════ -->
+    <section class="view" id="view-mobile" role="tabpanel" aria-labelledby="tab-mobile" hidden>
+      <div class="view-scroll view-scroll--mobile">
+        <div class="device">
+          <div class="m-page">
+            <header class="m-nav">
+              <div class="m-nav-left">
+                <button class="icon-plain" type="button" aria-label="Menu">
+                  <img src="assets/m-menu.svg" alt="" width="24" height="24" />
+                </button>
+                <button class="icon-plain" type="button" aria-label="Search">
+                  <img src="assets/m-search.svg" alt="" width="24" height="24" />
+                </button>
+              </div>
+              <img class="m-logo" src="assets/m-logo.svg" alt="NYT Cooking" width="131" height="23" />
+              <div class="m-nav-right">
+                <button class="icon-plain" type="button" aria-label="Your Recipe Box">
+                  <img src="assets/m-save-outline.svg" alt="" width="24" height="24" />
+                </button>
+                <button class="icon-plain" type="button" aria-label="Your account">
+                  <img src="assets/m-profile.svg" alt="" width="24" height="24" />
+                </button>
+              </div>
+            </header>
+
+            <div class="m-hero">
+              <div id="m-player-embed"></div>
+              <div class="player-controls">
+                <button type="button" class="player-btn" data-action="fullscreen" aria-label="Full screen">
+                  <img src="assets/fullscreen.svg" alt="" width="24" height="24" />
+                </button>
+                <button type="button" class="player-btn" data-action="mute" aria-label="Mute" aria-pressed="false">
+                  <img src="assets/muted.svg" alt="" width="19" height="16" />
+                </button>
+                <button type="button" class="player-btn" data-action="cc" aria-label="Closed captions" aria-pressed="false">
+                  <span class="cc-glyph">
+                    <img src="assets/cc-rect.svg" alt="" />
+                    <img src="assets/cc-text.svg" alt="" />
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <div class="m-meta">
+              <p class="m-kicker">The Veggie</p>
+              <h1 class="m-title">Help, My C.S.A. Sent Me A Boatload of Chard</h1>
+              <div class="action-bar">
+                <button class="btn-important btn-save" type="button">
+                  <img src="assets/save-btn.svg" alt="" width="20" height="20" />
+                  Save
+                </button>
+                <button class="icon-btn" type="button" aria-label="Share">
+                  <img src="assets/share.svg" alt="" width="20" height="20" />
+                </button>
+              </div>
+            </div>
+
+            <section class="m-recipes" aria-labelledby="m-recipes-title">
+              <a class="m-section-kicker" href="#" id="m-recipes-title">
+                Get the Recipes
+                <img src="assets/m-caret.svg" alt="" width="6" height="9" />
+              </a>
+              <ul class="m-compact-row">
+                <li>
+                  <span class="thumb-96">
+                    <img src="assets/recipe-1.png" alt="" />
+                    <img class="play-badge" src="assets/m-play-badge.svg" alt="" width="24" height="24" />
+                  </span>
+                  <p>Creamy Swiss Chard Pasta With Leeks, Tarragon and Lemon Zest</p>
+                </li>
+                <li>
+                  <span class="thumb-96">
+                    <img src="assets/recipe-2.png" alt="" />
+                    <img class="play-badge" src="assets/m-play-badge.svg" alt="" width="24" height="24" />
+                  </span>
+                  <p>Turnips With Whipped Pistachio Feta</p>
+                </li>
+                <li>
+                  <span class="thumb-96">
+                    <img src="assets/recipe-3.png" alt="" />
+                    <img class="play-badge" src="assets/m-play-badge.svg" alt="" width="24" height="24" />
+                  </span>
+                  <p>Creamy Swiss Chard Pasta With Leeks, Tarragon and Lemon Zest</p>
+                </li>
+                <li>
+                  <span class="thumb-96">
+                    <img src="assets/recipe-4.png" alt="" />
+                    <img class="play-badge" src="assets/m-play-badge.svg" alt="" width="24" height="24" />
+                  </span>
+                  <p>Provencal Greens Soup</p>
+                </li>
+              </ul>
+            </section>
+
+            <section class="m-episodes" aria-labelledby="m-episodes-title">
+              <hr class="m-rule" />
+              <h2 class="section-title" id="m-episodes-title">More Episodes of The Veggie</h2>
+              <ul class="m-video-list">
+                <li>
+                  <span class="m-video-thumb">
+                    <img src="assets/m-episode-1.png" alt="" />
+                    <span class="m-play">
+                      <img src="assets/m-play-circle.svg" alt="" />
+                      <img class="m-play-tri" src="assets/m-play-tri.svg" alt="" />
+                    </span>
+                  </span>
+                  <div>
+                    <h3>Our Ultimate Guide to Cooking a Thanksgiving Turkey</h3>
+                    <p class="label-xs">3 days ago</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="m-video-thumb">
+                    <img src="assets/m-episode-2.png" alt="" />
+                    <span class="m-play">
+                      <img src="assets/m-play-circle.svg" alt="" />
+                      <img class="m-play-tri" src="assets/m-play-tri.svg" alt="" />
+                    </span>
+                  </span>
+                  <div>
+                    <h3>How to Bake a Cake Like a Pro | Samantha Seneviratne</h3>
+                    <p class="label-xs">3 days ago</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="m-video-thumb">
+                    <img src="assets/m-episode-3.png" alt="" />
+                    <span class="m-play">
+                      <img src="assets/m-play-circle.svg" alt="" />
+                      <img class="m-play-tri" src="assets/m-play-tri.svg" alt="" />
+                    </span>
+                  </span>
+                  <div>
+                    <h3>Everything You Need to Know About Olive Oil (With 3 New Recipes) | Andy Baraghani</h3>
+                    <p class="label-xs">3 days ago</p>
+                  </div>
+                </li>
+              </ul>
+            </section>
+
+            <section class="m-articles" aria-labelledby="m-articles-title">
+              <h2 class="section-title" id="m-articles-title">Related Articles</h2>
+              <div class="m-card-row">
+                <article class="m-card">
+                  <img class="m-card-img" src="assets/m-article-1.png" alt="" />
+                  <h3>Our Ultimate Guide to Making Bagels</h3>
+                  <p class="byline">By Claire Saffitz</p>
+                  <p class="label-xs">Article</p>
+                </article>
+                <article class="m-card">
+                  <img class="m-card-img" src="assets/m-article-2.png" alt="" />
+                  <h3>Our Ultimate Guide to Making Bagels</h3>
+                  <p class="byline">By Claire Saffitz</p>
+                  <p class="label-xs">Article</p>
+                </article>
+              </div>
+            </section>
+
+            <footer class="m-footer">
+              <section class="m-newsletter">
+                <h2>Get Our Newsletter</h2>
+                <p class="lede">Get recipes, tips and NYT special offers delivered straight to your inbox.</p>
+                <p class="fine">Opt out or contact us anytime. See our Privacy Policy.</p>
+                <form class="m-signup" onsubmit="return false">
+                  <input type="email" placeholder="Enter your email" aria-label="Email address" />
+                  <button class="btn-important" type="submit">Sign up</button>
+                </form>
+                <div class="m-follow">
+                  <h3>Follow Us</h3>
+                  <div class="social-row">
+                    <a class="social-pill" href="#" aria-label="Instagram"><img src="assets/social-ig.svg" alt="" /></a>
+                    <a class="social-pill" href="#" aria-label="Facebook"><img src="assets/social-fb.svg" alt="" /></a>
+                    <a class="social-pill" href="#" aria-label="YouTube"><img src="assets/social-yt.svg" alt="" /></a>
+                    <a class="social-pill" href="#" aria-label="TikTok"><img src="assets/social-tt.svg" alt="" /></a>
+                    <a class="social-pill" href="#" aria-label="Pinterest"><img src="assets/social-pin.svg" alt="" /></a>
+                  </div>
+                </div>
+                <div class="m-getapp">
+                  <h3>Get the App</h3>
+                  <div class="badge-row">
+                    <a href="#"><img src="assets/badge-appstore.svg" alt="Download on the App Store" width="120" height="40" /></a>
+                    <a href="#"><img src="assets/badge-googleplay.svg" alt="Get it on Google Play" width="135" height="40" /></a>
+                  </div>
+                </div>
+              </section>
+
+              <section class="m-sitemap">
+                <div class="m-about">
+                  <h3>About Us</h3>
+                  <p>
+                    New York Times Cooking offers subscribers recipes, advice and inspiration for better everyday
+                    cooking. From easy weeknight dinners to holiday meals, our recipes have been tested and perfected to
+                    meet the needs of home cooks of all levels. <a href="#">Subscribe now</a> for full access.
+                  </p>
+                </div>
+                <ul class="link-group">
+                  <li class="group-title">Learn More</li>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">NYTimes.com/food</a></li>
+                </ul>
+                <div>
+                  <ul class="link-group">
+                    <li class="group-title">Shop</li>
+                    <li><a href="#">Gift Subscription</a></li>
+                    <li><a href="#">Merchandise</a></li>
+                  </ul>
+                  <hr class="link-rule" />
+                  <p class="link-single"><a href="#">Send Us Feedback</a></p>
+                </div>
+                <ul class="link-group">
+                  <li class="group-title">Recipes</li>
+                  <li><a href="#">From Our Newsletters</a></li>
+                  <li><a href="#">Weeknight</a></li>
+                  <li><a href="#">Pasta</a></li>
+                  <li><a href="#">Dinner</a></li>
+                  <li><a href="#">Healthy</a></li>
+                  <li><a href="#">Vegetarian</a></li>
+                  <li><a href="#">Vegan</a></li>
+                  <li><a href="#">Thanksgiving</a></li>
+                  <li><a href="#">Christmas</a></li>
+                </ul>
+                <p class="m-legal">
+                  <span>© The New York Times Company</span>
+                  <a href="#">Terms of Service</a>
+                  <a href="#">Privacy Policy</a>
+                </p>
+              </section>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="app.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+  </body>
+</html>
