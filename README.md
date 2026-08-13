@@ -4,7 +4,7 @@ Toggle between the pared-down first launch and the fuller future experience. Eac
 
 | Prototype | What's in it |
 |---|---|
-| **Release 1** | Full-bleed video + episode title. No recipe rail, save, share, or related carousels. Matches Figma [`12190:13099`](https://www.figma.com/design/moqoPImGMRnwhRZ12JVbJF/-2026--Video-Series?node-id=12190-13099). |
+| **Release 1** | Video, episode title, dek, and the recipes in the episode. No save, share, or related carousels. |
 | **Future Release** | Full page — related episodes, articles, save, and share. |
 
 ## Run

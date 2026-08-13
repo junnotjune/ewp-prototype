@@ -482,12 +482,6 @@ body[data-release="r1"] .future-only {
   overflow: hidden;
 }
 
-/* Release 1 has no recipe rail, so the player takes the full content width. */
-body[data-release="r1"] .d-player {
-  flex: 1 1 auto;
-  height: 652px;
-}
-
 .d-player iframe {
   display: block;
   width: 100%;
@@ -623,12 +617,6 @@ body[data-release="r1"] .d-dek {
 .d-meta-text {
   width: 710px;
   flex: 0 0 710px;
-}
-
-/* No action bar in Release 1, so the headline is free to use the full width. */
-body[data-release="r1"] .d-meta-text {
-  width: auto;
-  flex: 1 1 auto;
 }
 
 .d-kicker {
@@ -972,12 +960,13 @@ body[data-release="r1"] .d-meta-text {
   color: #222;
 }
 
-body[data-release="r1"] .m-meta {
-  padding-bottom: 40px;
-}
-
 .m-recipes {
   padding: 24px 0 0 20px;
+}
+
+/* The recipe row is the last thing before the footer in Release 1. */
+body[data-release="r1"] .m-recipes {
+  padding-bottom: 32px;
 }
 
 .m-section-kicker {

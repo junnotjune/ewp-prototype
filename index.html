@@ -12,7 +12,7 @@
     />
     <!-- Bump ?v= on every deploy: Pages caches these for 10 minutes, so without
          it a plain reload can show old CSS against new markup. -->
-    <link rel="stylesheet" href="styles.css?v=4" />
+    <link rel="stylesheet" href="styles.css?v=5" />
   </head>
   <body data-release="r1">
     <div class="switcher" role="region" aria-label="Prototype switcher">
@@ -20,7 +20,7 @@
         <div class="switcher-releases" role="tablist" aria-label="Choose release">
           <button type="button" role="tab" id="tab-r1" data-release="r1" aria-selected="true" aria-controls="view-desktop view-mobile">
             <span class="release-name">Release 1</span>
-            <span class="release-desc">Video and episode title only. No recipes, save, share, or related content.</span>
+            <span class="release-desc">Watch page with the episode's recipes. No save, share, or related content.</span>
           </button>
           <button type="button" role="tab" id="tab-future" data-release="future" aria-selected="false" aria-controls="view-desktop view-mobile">
             <span class="release-name">Future Release</span>
@@ -92,7 +92,7 @@
                 </div>
               </div>
 
-              <aside class="d-rail future-only" aria-labelledby="d-rail-title">
+              <aside class="d-rail" aria-labelledby="d-rail-title">
                 <h2 class="section-title" id="d-rail-title">Recipes in the Episode</h2>
                 <ul class="d-rail-list">
                   <li>
@@ -370,7 +370,7 @@
               </div>
             </div>
 
-            <section class="m-recipes future-only" aria-labelledby="m-recipes-title">
+            <section class="m-recipes" aria-labelledby="m-recipes-title">
               <a class="m-section-kicker" href="#" id="m-recipes-title">
                 Get the Recipes
                 <img src="assets/m-caret.svg" alt="" width="6" height="9" />
@@ -547,7 +547,7 @@
       </div>
     </section>
 
-    <script src="app.js?v=4"></script>
+    <script src="app.js?v=5"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
   </body>
 </html>
