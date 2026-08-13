@@ -481,6 +481,12 @@ body[data-release="r1"] .future-only {
   overflow: hidden;
 }
 
+/* Release 1 has no recipe rail, so the player takes the full content width. */
+body[data-release="r1"] .d-player {
+  flex: 1 1 auto;
+  height: 652px;
+}
+
 .d-player iframe {
   display: block;
   width: 100%;
@@ -591,7 +597,7 @@ body[data-release="r1"] .future-only {
   align-items: flex-start;
   gap: 0;
   margin-top: 12px;
-  margin-bottom: 40px;
+  margin-bottom: 120px;
 }
 
 body[data-release="future"] .d-meta {
@@ -601,6 +607,12 @@ body[data-release="future"] .d-meta {
 .d-meta-text {
   width: 710px;
   flex: 0 0 710px;
+}
+
+/* No action bar in Release 1, so the headline is free to use the full width. */
+body[data-release="r1"] .d-meta-text {
+  width: auto;
+  flex: 1 1 auto;
 }
 
 .d-kicker {
@@ -933,6 +945,10 @@ body[data-release="future"] .d-meta {
 
 .m-meta .action-bar {
   margin-top: 10px;
+}
+
+body[data-release="r1"] .m-meta {
+  padding-bottom: 48px;
 }
 
 .m-recipes {
